@@ -1,0 +1,163 @@
+/* here we import google font to different type of font 
+here we use the font awsoame to import poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* it is the universal block here we apply any properties it will apply to all the html */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+}
+/* it is define to the protfolio */
+.protfolio-container{   /*here i  make one mistake in the spelling of the container*/ 
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.navlist{
+    display:flex;   /*here display flex is used to coloums into row*/
+    gap: 3.5rem;
+    height: 15vh;
+    width: 100%;
+    justify-content:center ;   /* this is  used to arrage the content into the center*/
+    align-items: center;      /* this is used to center the content tne div*/
+    position: fixed;
+}
+.navlist li{
+    list-style: none;
+}
+.navlist li a{
+    text-decoration:none ;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+} 
+.left-container, .right-container{
+    height:100vh;
+    display: flex;
+    align-items: center;
+}
+.left-container{
+    background:#262525 ;
+    width: 70%;
+    padding-left: 3rem;
+
+}
+.right-container{
+    background: linear-gradient(-45deg,#3877FF,#262525 70%);
+    width: 30%;
+}
+.icons .fa-brands{
+    color: #bbb;
+    font-size: 1.7rem;
+}
+.icons{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+}
+.content{
+    margin-left: 4rem;
+    color: #fff;
+    align-items: center;
+}
+.content .intro{
+    font-size: 1.5rem;
+    color: #fff;
+}
+.content .intro span{
+    color: #5DB9EE;
+}
+.content h1{
+    font-size:3rem;
+    color: #5DB9EE;
+}
+.content .details{
+    font-size: 1.1rem;
+    color:#fff;
+    max-width: 38rem;
+    margin: 1.1rem 0 3rem 0;      /*for top ,  left, bottom, right*/
+    line-height: 1.8rem;
+}
+.btn-container button{
+    border: .1rem solid #5DB9EE;
+    font-size: 1.5rem;
+    padding: 2rem,3.5rem;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: .5 ease;
+}
+button:nth-child(1){
+    background-color: #5DB9EE;
+    color: #262525;
+
+}
+button:nth-child(2){
+    background-color: transparent;
+    color: #5DB9EE;
+    margin-left: 4rem;
+}
+button:nth-child(1):hover{
+    background-color: transparent;
+    color: #5DB9EE;
+    
+}
+button:nth-child(2):hover{
+    background-color: #5DB9EE;
+    color: #262525;
+}
+/* to use to style the social media icon   here hover is used  when we gose to that icon the color is changed*/
+.icons .fa-brands:hover {
+    coursor: pointer;
+    background: linear-gradient(#fff,#3877FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.design .circle {
+    aspect-ratio: 1;      /*used to set postion and degine the circle*/
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.circle:nth-child(1){     /*this is used to first circle*/
+    background: linear-gradient(90deg, transparent 50%, #262525 50%);
+    width: 30rem;
+}
+.circle:nth-child(2){     /*used to second  circle by the use of nth- child()*/ 
+    
+    width: 24rem;
+    background-image: url("photos/Screenshot\ 2024-07-09\ 222013.png");
+    background-size: 110% ;
+    background-repeat: no-repeat;
+    border: 1rem solid white;
+    box-shadow:       /*here is used to create the ring around the image*/
+    0 0 1rem #fff,
+    inset 0 0 1rem #fff,
+    0 0 2rem #3877FF,
+    inset 0 0 2rem #3877FF,
+    0 0 4rem #3877FF,
+    inset 0 0 4rem #3877FF;
+}
+.navlist li a::after, .navlist .active::after{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform:scaleX(0);
+    transform-origin:bottom right;
+    transition: transform .5s;
+}
+.navlist li a:hover::after, .navlist .active::after{
+    transform:scaleX(1);
+    transform-origin: buttom left;
+}
